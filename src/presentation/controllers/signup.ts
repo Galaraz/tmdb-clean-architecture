@@ -13,6 +13,8 @@ class SignupController implements Controller {
   async handle(request: HttpRequest): Promise<HttpResponse> {
     const { email, password, passwordConfirmation } = request.body;
 
+    console.log('@@@@ params => ', email, password, passwordConfirmation)
+
     if (!email) {
       return badRequest(new MissingParamError('email'));
     }
